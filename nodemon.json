@@ -1,0 +1,6 @@
+{
+    "watch": ["src", "src/locales"],
+    "ext": "ts,json,ftl",
+    "ignore": ["src/**/*.spec.ts"],
+    "exec": "tsx ./src/bot.ts"
+  }

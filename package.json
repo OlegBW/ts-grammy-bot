@@ -1,0 +1,40 @@
+{
+  "name": "ts-grammy-bot",
+  "version": "1.0.0",
+  "main": "build/bot.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node build/bot.js",
+    "dev": "nodemon",
+    "format": "prettier --write ./src",
+    "prepare": "npm run build",
+    "bg:start": "npm run prepare && pm2 start build/bot.js --name telegram-bot",
+    "bg:restart": "npm run prepare && pm2 restart telegram-bot",
+    "bg:logs": "pm2 logs telegram-bot --lines 1000 -f"
+  },
+  "keywords": [
+    "typescript",
+    "telegram",
+    "grammy",
+    "typeorm"
+  ],
+  "author": "OlegBW",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@grammyjs/i18n": "^1.0.2",
+    "@types/node": "^22.5.5",
+    "dotenv": "^16.4.5",
+    "grammy": "^1.30.0",
+    "prettier": "^3.3.3",
+    "reflect-metadata": "^0.2.2",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  }
+}
